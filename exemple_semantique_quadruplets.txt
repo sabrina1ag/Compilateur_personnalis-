@@ -1,0 +1,94 @@
+INTEGER ROUTINE fonction1 (X,Y,Z)
+
+% incompatiblite de type
+
+INTEGER A = 4  ;
+REAL B = TRUE; 
+LOGICAL G = 30.2;
+
+% double declaration
+
+LOGICAL B;
+
+%erreurs des TAB
+
+INTEGER TAB DIMENSION(-10);
+REAL TAB2 DIMENSION(-12,200);
+REAL TAB3 DIMENSION(12,-200);
+REAL TAB4 DIMENSION(-12,-200);
+
+% erreurs d'un caractere de taille > 1
+CHARACTER dutsh = "azzedin";
+
+%depassement de taille
+
+INTEGER MAT DIMENSION(10,10);
+REAL into DIMENSION(20);
+INTEGER Z;
+INTEGER X;
+INTEGER Y;
+Z= MAT(20,10);
+X= MAT(10,20);
+Y= into(30);
+
+%division sur Zero 
+Z = 20/0;
+Z = (12 + 30) / 0;
+
+
+fonction1 = A; 
+ENDR
+
+REAL ROUTINE fonction2 (X,Y,Z)
+
+% incompatiblite de type
+INTEGER A;
+
+% partie pour les tests quadruplés if et while 
+
+IF(((A + 1).LT.B) .AND.(Z .EQ. (Q/0))) THEN
+
+J = 2; 
+
+        IF(((A + 1).LT.B) .AND.(Z .EQ. (Q/0))) THEN
+
+        J = 4; 
+
+
+        ELSE
+        K = 56;
+        ENDIF;
+
+
+        DOWHILE(A)
+                DOWHILE(j)
+                 P = P + 1;
+                 ENDDO;
+                 K = K * 21;
+        ENDDO;
+
+ ELSE
+
+ K = 30;
+ 
+ ENDIF;
+
+
+
+
+%element non declarer
+arselan = 300;
+fonction2 = qq; 
+ENDR
+
+
+PROGRAM HelloAcad
+INTEGER A;
+%depassement de parametre de fonction + verfication si la fonction est  declarèe
+A = CALL fonction1 (X ,Y ,Z, Q);
+A = CALL routine (X,Y,Z);
+
+
+NANO = "ASD";
+
+END.
